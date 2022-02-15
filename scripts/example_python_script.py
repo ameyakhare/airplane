@@ -5,7 +5,7 @@ def main(params):
     print("parameters:", params)
 
 
-    print("holy shit is this working?")
+    print("holy shit this is not working")
     # You can return data to show outputs to users.
     # Outputs documentation: https://docs.airplane.dev/tasks/outputs
     return [
