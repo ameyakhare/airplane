@@ -3,8 +3,8 @@
 import os
 # Put the main logic of the task in the main function.
 def main(params):
-    print("parameters:", params)
-    print("env: ", os.environ['AIRPLANE_ENV'])
+    print("parameters: ", params)
+    print("airplane env: ", os.environ['AIRPLANE_ENV'])
 
     # You can return data to show outputs to users.
     # Outputs documentation: https://docs.airplane.dev/tasks/outputs
