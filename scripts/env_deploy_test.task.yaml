@@ -1,0 +1,5 @@
+name: Env Deploy Test
+slug: env_deploy_test
+python:
+  entrypoint: env_deploy_test.py
+timeout: 3600
