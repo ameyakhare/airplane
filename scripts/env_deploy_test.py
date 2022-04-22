@@ -7,5 +7,5 @@ def main(params):
     # You can return data to show outputs to users.
     # Outputs documentation: https://docs.airplane.dev/tasks/outputs
     return [
-        {"environment": os.environ.get("AIRPLANE_ENV"), "message": "Testing in prod!"},
+        {"environment": os.environ.get("AIRPLANE_ENV_SLUG"), "message": "Testing in prod!"},
     ]
