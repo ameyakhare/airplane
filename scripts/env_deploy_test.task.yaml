@@ -1,5 +1,24 @@
 name: Env Deploy Test
 slug: env_deploy_test
+parameters:
+- name: Example Param
+  slug: example_param
+  type: shorttext
+  required: false
 python:
   entrypoint: env_deploy_test.py
 timeout: 3600
+schedules:
+  first_schedule:
+    name: First Schedule
+    description: My first schedule
+    cron: 0 0 1 * *
+  # second_schedule:
+  #   name: Second Schedule
+  #   cron: 0 0 1 1 *
+  demo_schedule:
+    name: Demo
+    description: For the demo
+    cron: 0 0 1 * *
+    params:
+      example_param: lmao
