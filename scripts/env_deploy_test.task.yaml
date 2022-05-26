@@ -11,17 +11,5 @@ timeout: 3600
 schedules:
   first_schedule:
     name: First Schedule
-    description: Deploying using deployments
+    description: Deploying using CLI
     cron: 0 0 1 * *
-  second_schedule:
-    name: Second Schedule
-    description: Deploying using deployments
-    cron: 0 0 1 1 *
-    params:
-      example_param: Deploying using deployments
-  # demo_schedule:
-  #   name: Demo
-  #   description: For the demo
-  #   cron: 0 0 1 * *
-  #   params:
-  #     example_param: lmao
