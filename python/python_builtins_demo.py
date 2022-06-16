@@ -28,15 +28,15 @@ def main(params):
     )
 
     slack.message(
-        channel_name="builtins-test",
+        channel_name="test-builtins",
         message=f'Email sent to {email_run.output["number_of_recipients"]}',
     )
     slack.message(
-        channel_name="builtins-test",
+        channel_name="test-builtins",
         message=f'SQL Run Row: {sql_run.output["Q1"][0]}'
     )
     slack.message(
-        channel_name="builtins-test",
+        channel_name="test-builtins",
         message=f'REST Output: {rest_run.output}',
     )
 
