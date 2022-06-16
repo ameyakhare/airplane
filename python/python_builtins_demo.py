@@ -11,7 +11,7 @@ def main(params):
     email_run = email.message(
         email_resource_id="res20220217zko5xnjjkzb",
         sender=email.Contact(email="ameya@airplane.dev", name="Ameya"),
-        recipients=[email.Contact(email="ameya@airplane.dev", name="Ameya")],
+        recipients=[email.Contact(email="lee@airplane.dev", name="Lee")],
         subject="Greetings",
         message=":prayge:",
     )
@@ -29,7 +29,7 @@ def main(params):
 
     slack.message(
         channel_name="test-builtins",
-        message=f'Email sent to {email_run.output["number_of_recipients"]}',
+        message=f'Email sent to {email_run.output["number_of_recipients"]} recipient(s)',
     )
     slack.message(
         channel_name="test-builtins",
