@@ -1,41 +1,47 @@
-from airplane import email
-from airplane import slack
-from airplane import sql
-from airplane import rest
+import arrow
+
+import airplane
 
 # Put the main logic of the task in the main function.
 def main(params):
     # You can return data to show outputs to users.
     # Outputs documentation: https://docs.airplane.dev/tasks/outputs
 
-    email_run = email.message(
-        email_resource_id="res20220217zko5xnjjkzb",
-        sender=email.Contact(email="ameya@airplane.dev", name="Ameya"),
-        recipients=[email.Contact(email="lee@airplane.dev", name="Lee")],
+    start = arrow.now()
+    email_run = airplane.email.message(
+        email_resource="mailgun",
+        sender=airplane.email.Contact(email="ameya@airplane.dev", name="Ameya"),
+        recipients=[airplane.email.Contact(email="lee@airplane.dev", name="Lee")],
         subject="Greetings",
         message=":prayge:",
     )
+    print(f"Running email took {arrow.now()-start}")
 
-    sql_run = sql.query(
-        sql_resource_id="res20220113z07xszb",
+    start = arrow.now()
+    sql_run = airplane.sql.query(
+        sql_resource="postgres",
         query="SELECT name, email FROM users LIMIT 1",
     )
+    print(f"Running sql took {arrow.now()-start}")
 
-    rest_run = rest.request(
-        rest_resource_id="res20220613zmq8mxihtm8",
-        method=rest.Method.GET,
+
+    start = arrow.now()
+    rest_run = airplane.rest.request(
+        rest_resource="prayge",
+        method=airplane.rest.Method.GET,
         path="index",
     )
+    print(f"Running rest took {arrow.now()-start}")
 
-    slack.message(
+    airplane.slack.message(
         channel_name="test-builtins",
         message=f'Email sent to {email_run.output["number_of_recipients"]} recipient(s)',
     )
-    slack.message(
+    airplane.slack.message(
         channel_name="test-builtins",
         message=f'SQL Run Row: {sql_run.output["Q1"][0]}'
     )
-    slack.message(
+    airplane.slack.message(
         channel_name="test-builtins",
         message=f'REST Output: {rest_run.output}',
     )
