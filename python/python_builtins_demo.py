@@ -19,7 +19,7 @@ def main(params):
 
     start = arrow.now()
     sql_run = airplane.sql.query(
-        sql_resource="postgres",
+        sql_resource="db",
         query="SELECT name, email FROM users LIMIT 1",
     )
     print(f"Running sql took {arrow.now()-start}")
@@ -32,19 +32,6 @@ def main(params):
         path="index",
     )
     print(f"Running rest took {arrow.now()-start}")
-
-    airplane.slack.message(
-        channel_name="test-builtins",
-        message=f'Email sent to {email_run.output["number_of_recipients"]} recipient(s)',
-    )
-    airplane.slack.message(
-        channel_name="test-builtins",
-        message=f'SQL Run Row: {sql_run.output["Q1"][0]}'
-    )
-    airplane.slack.message(
-        channel_name="test-builtins",
-        message=f'REST Output: {rest_run.output}',
-    )
 
     return [
         {"namespace": "email", "name": "message", "status": email_run.status.value},
