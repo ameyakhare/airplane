@@ -9,7 +9,7 @@ def main(params):
 
     start = arrow.now()
     email_run = airplane.email.message(
-        email_resource="mailgun",
+        email_resource="mail",
         sender=airplane.email.Contact(email="ameya@airplane.dev", name="Ameya"),
         recipients=[airplane.email.Contact(email="lee@airplane.dev", name="Lee")],
         subject="Greetings",
@@ -27,7 +27,7 @@ def main(params):
 
     start = arrow.now()
     rest_run = airplane.rest.request(
-        rest_resource="prayge",
+        rest_resource="website",
         method=airplane.rest.Method.GET,
         path="index",
     )

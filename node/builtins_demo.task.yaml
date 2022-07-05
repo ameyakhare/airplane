@@ -1,0 +1,14 @@
+slug: node_builtins_demo
+name: Node Builtins Demo
+
+node:
+  entrypoint: builtins_demo.ts
+  nodeVersion: "16"
+
+resources:
+  mail: res_airplane_dev
+  db: demo_db
+  website: prayge
+
+constraints:
+  mta: v2

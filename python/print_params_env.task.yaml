@@ -1,4 +1,4 @@
-name: Print Params Env
+name: Python Print Params Env
 slug: print_params_env
 python:
   entrypoint: print_params_env.py

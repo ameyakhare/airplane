@@ -2,12 +2,12 @@ slug: python_builtins_demo
 name: Python Builtins Demo
 
 python:
-  entrypoint: python_builtins_demo.py
+  entrypoint: builtins_demo.py
 
 resources:
-  mailgun: res_airplane_dev
+  mail: res_airplane_dev
   db: demo_db
-  prayge: prayge
+  website: prayge
 
 constraints:
   mta: v2
