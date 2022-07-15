@@ -1,0 +1,6 @@
+{
+    "name": "node_task",
+    "dependencies": {
+        "airplane": "next"
+    }
+}

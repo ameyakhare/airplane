@@ -1,0 +1,13 @@
+slug: python_builtins_demo
+name: Python Builtins Demo
+
+python:
+  entrypoint: builtins_demo.py
+
+resources:
+  mail: res_airplane_dev
+  db: demo_db
+  website: prayge
+
+constraints:
+  mta: v2

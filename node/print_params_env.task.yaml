@@ -1,0 +1,9 @@
+slug: ameya_node_task
+name: Node Print Params Env
+
+node:
+  entrypoint: print_params_env.ts
+  nodeVersion: "16"
+
+constraints:
+  mta: v2
